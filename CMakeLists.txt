@@ -39,6 +39,8 @@ target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC
   ${console_bridge_INCLUDE_DIRS})
   
   
+list (APPEND PACKAGE_LIBRARIES ${PROJECT_NAME})
+
 # Mark executables and/or libraries for installation
 install(TARGETS ${PACKAGE_LIBRARIES}
     EXPORT ${PROJECT_NAME}-targets DESTINATION lib)
@@ -74,15 +76,6 @@ install(FILES
 export(EXPORT ${PROJECT_NAME}-targets FILE
     ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-targets.cmake)
   
-### Mark executables and libraries for installation
-#install(TARGETS ${PROJECT_NAME}
-#  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-#)
-
-#install(DIRECTORY include/${PROJECT_NAME}/
-#  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
 if (ENABLE_TESTS)
   enable_testing()
   add_custom_target(run_tests ALL
