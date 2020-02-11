@@ -203,8 +203,6 @@ public:
   void sendIOPacket(CPFPacket& pkt);
 
 private:
-  FRIEND_TEST(SessionTest, test_create_connection);
-
   shared_ptr<Socket> socket_;
   shared_ptr<Socket> io_socket_;
   EIP_UDINT session_id_;
