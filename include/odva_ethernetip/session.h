@@ -27,7 +27,6 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 #define ODVA_ETHERNETIP_SESSION_H
 
 #include <string>
-#include <gtest/gtest_prod.h>
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
 #include <boost/asio.hpp>
