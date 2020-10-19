@@ -60,7 +60,7 @@ IOScanner::IOScanner(io_service& io_service, string hostname)
 void IOScanner::sendListIdentityRequest()
 {
   CONSOLE_BRIDGE_logInform("Sending List Identity Request... ");
-  udp::resolver r(socket_.get_io_service());
+  udp::resolver r(socket_.get_executor().context());
   udp::resolver::query q(udp::v4(), hostname_, "44818");
   udp::endpoint receiver_endpoint = *r.resolve(q);
 
@@ -160,7 +160,7 @@ void IOScanner::run()
 {
   sendListIdentityRequest();
   CONSOLE_BRIDGE_logInform("Waiting for responses.");
-  socket_.get_io_service().run();
+  socket_.get_executor().context().run();
 }
 
 } // namespace eip
