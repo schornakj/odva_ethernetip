@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5.0)
 project(odva_ethernetip VERSION 0.1.0 LANGUAGES CXX)
 
 find_package(console_bridge REQUIRED)
-find_package(Boost 1.47 REQUIRED COMPONENTS system)
+find_package(Boost 1.7 REQUIRED COMPONENTS system)
 
 ## Declare a cpp library for just Ethernet/IP generic stuff
 add_library(${PROJECT_NAME} SHARED
