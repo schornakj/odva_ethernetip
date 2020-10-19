@@ -8,7 +8,8 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - {BADGE: focal,
+          - {CI_NAME: ROS2_Foxy,
+             BADGE: focal,
              OS_NAME: ubuntu,
              OS_CODE_NAME: focal,
              ROS_DISTRO: foxy,
@@ -16,7 +17,8 @@ jobs:
              ADDITIONAL_DEBS: git,
              VERBOSE_TESTS: true,
              }
-          - {BADGE: focal,
+          - {CI_NAME: ROS_Noetic,
+             BADGE: focal,
              OS_NAME: ubuntu,
              OS_CODE_NAME: focal,
              ROS_DISTRO: noetic,
@@ -24,7 +26,8 @@ jobs:
              ADDITIONAL_DEBS: git,
              VERBOSE_TESTS: true,
              }
-          - {BADGE: bionic,
+          - {CI_NAME: ROS2_Eloquent,
+             BADGE: bionic,
              OS_NAME: ubuntu,
              OS_CODE_NAME: bionic,
              ROS_DISTRO: eloquent,
@@ -32,7 +35,8 @@ jobs:
              ADDITIONAL_DEBS: git,
              VERBOSE_TESTS: true,
              }
-          - {BADGE: bionic,
+          - {CI_NAME: ROS_Melodic,
+             BADGE: bionic,
              OS_NAME: ubuntu,
              OS_CODE_NAME: bionic,
              ROS_DISTRO: melodic,
