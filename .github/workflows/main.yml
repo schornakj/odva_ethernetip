@@ -1,0 +1,51 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  industrial_ci:
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - {CI_NAME: ROS2_Foxy,
+             BADGE: focal,
+             OS_NAME: ubuntu,
+             OS_CODE_NAME: focal,
+             ROS_DISTRO: foxy,
+             ROS_REPO: main,
+             ADDITIONAL_DEBS: git,
+             VERBOSE_TESTS: true,
+             }
+          - {CI_NAME: ROS_Noetic,
+             BADGE: focal,
+             OS_NAME: ubuntu,
+             OS_CODE_NAME: focal,
+             ROS_DISTRO: noetic,
+             ROS_REPO: main,
+             ADDITIONAL_DEBS: git,
+             VERBOSE_TESTS: true,
+             }
+          - {CI_NAME: ROS2_Eloquent,
+             BADGE: bionic,
+             OS_NAME: ubuntu,
+             OS_CODE_NAME: bionic,
+             ROS_DISTRO: eloquent,
+             ROS_REPO: main,
+             ADDITIONAL_DEBS: git,
+             VERBOSE_TESTS: true,
+             }
+          - {CI_NAME: ROS_Melodic,
+             BADGE: bionic,
+             OS_NAME: ubuntu,
+             OS_CODE_NAME: bionic,
+             ROS_DISTRO: melodic,
+             ROS_REPO: main,
+             ADDITIONAL_DEBS: git,
+             VERBOSE_TESTS: true,
+             }
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: 'ros-industrial/industrial_ci@master'
+        env: ${{matrix.env}}

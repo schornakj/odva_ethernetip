@@ -8,10 +8,10 @@
   <maintainer email="mpurvis@clearpathrobotics.com">Mike Purvis</maintainer>
   <author email="kareem@shehata.ca">Kareem Shehata</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
-
   <depend>boost</depend>
   <depend>libconsole-bridge-dev</depend>
 
-  <test_depend>rosunit</test_depend>
+  <export>
+      <build_type>cmake</build_type>
+  </export>
 </package>
